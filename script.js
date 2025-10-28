@@ -27,8 +27,8 @@ const comprarBoleto = document.getElementById('comprarBoleto');
 // 1. Configuración de la Ruleta
 const premios = [
     '5 m videollamada', '3 m videollamada', '2 m videollamada', 'Sorpresa', 'Promo 1', 
-    'Promo 2', 'Sorpresa', 'VIP 1 semana', 'VIP 1 día', '10 Fotos', 
-    '5 Fotos', 'zing', '1 video 3 m', '3 videos cortos', 'Sorpresa'
+    'Promo 2', 'Sorpresa', 'VIP 1 semana', 'VIP 2 semanas', '10 Fotos', 
+    '5 Fotos', 'zing', '1 video', '3 videos cortos', 'Sorpresa'
 ];
 const numSectores = premios.length; 
 const anguloSector = (2 * Math.PI) / numSectores; 
