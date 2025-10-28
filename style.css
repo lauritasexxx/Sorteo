@@ -1,0 +1,134 @@
+:root {
+    --color-principal: #007bff; /* Azul moderno */
+    --color-secundario: #ff4500; /* Naranja vibrante para el botón GIRAR */
+    --color-whatsapp: #25D366; /* Verde WhatsApp */
+    --color-fondo: #f4f7fa; 
+    --color-texto: #333;
+    --sombra-ruleta: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-fondo);
+    font-family: 'Poppins', sans-serif; /* Aplicar fuente moderna */
+    padding: 10px; 
+}
+
+.ruleta-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 95vw; 
+}
+
+#ruletaCanvas {
+    transition: transform 5s cubic-bezier(.1, .2, .2, 1);
+    border-radius: 50%; 
+    box-shadow: var(--sombra-ruleta); 
+    border: 8px solid var(--color-principal); 
+}
+
+/* ------------------ Botones Generales ------------------ */
+
+#girarBoton, #comprarBoleto {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none; 
+    text-align: center;
+    width: 250px; 
+    font-family: 'Poppins', sans-serif;
+}
+
+#girarBoton {
+    background-color: var(--color-secundario); 
+    color: white;
+}
+
+#girarBoton:hover:not(:disabled) {
+    background-color: #e63e00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#girarBoton:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+    color: #666;
+}
+
+/* ------------------ Botón WhatsApp ------------------ */
+
+#comprarBoleto {
+    background-color: var(--color-whatsapp);
+    color: white;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); 
+    margin-top: 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#comprarBoleto:hover {
+    background-color: #1FAF59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ------------------ Indicador y Resultado ------------------ */
+
+#indicador {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translate(-50%, -10px); 
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid var(--color-texto); 
+    z-index: 10;
+}
+
+#resultado {
+    margin-top: 25px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-principal);
+    text-align: center;
+    min-height: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ADAPTABILIDAD MÓVIL */
+@media (max-width: 600px) {
+    #ruletaCanvas {
+        width: 325px;
+        height: 325px;
+    }
+
+    #girarBoton, #comprarBoleto {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+    
+    #resultado {
+        font-size: 1.5em;
+    }
+}
