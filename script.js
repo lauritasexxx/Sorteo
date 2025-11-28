@@ -2,7 +2,7 @@
 // ** CONFIGURACIÓN DE LA VERSIÓN **
 // ¡CAMBIA ESTE NÚMERO PARA RESETEAR EL CONCURSO!
 // ===============================================
-const APP_VERSION = 2; 
+const APP_VERSION = 1.1; 
 
 const CANVAS_SIZE = 400; 
 const STORAGE_KEY_WINNER = 'ruleta_ganador_permanente'; 
